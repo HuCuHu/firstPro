@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/zhuce.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/bootstrap.min.css">
+</head>
+<body>
+    <form οnsubmit="return check()" action="/register" method="POST" >
+    <div class="main">
+        <div class="main0">
+           <div class="main_left">
+              <img src="images/zhuce-image-3.png" class="theimg"/>
+              <img src="images/zhuce-image-2.png" class="secimg"/>
+              <img src="images/zhuce-image-1.png" class="firimg"/>
+           </div>
+           <div class="main_right">
+              <div class="main_r_up">
+                  <img src="images/user.png" />
+                  <div class="pp">注册</div>
+              </div>
+              <div class="sub"><p>已经注册？<a href="/login"><span class="blue">请登录</span></a></p></div>
+              <div class="txt txt0" >
+                  <span style="letter-spacing:8px;">用户名:</span>
+                  <input id="username" name="username" type="text" class="txtphone" placeholder="请输入用户名" />
+                  <br>
+                  <span></span>
+              </div>
+              <div class="txt txt0" >
+                  <span style="letter-spacing:4px;">登录密码:</span>
+                  <input id="password1" name="password" type="password" class="txtphone" placeholder="请输入密码"/>
+                  <br>
+                  <span></span>
+              </div>
+              <div class="txt txt0" >
+                  <span style="letter-spacing:4px;">重复密码:</span>
+                  <input id="password2" name="repass" type="password" class="txtphone" placeholder="请再次输入密码"/>
+                  <br>
+                  <span></span>
+              </div>
+              <div class="txt txt0" >
+                <span style="letter-spacing:16px;">姓名:</span>
+                <input id="wname"  name="wname" type="text" class="txtphone" placeholder="请输入姓名"/>
+                <br>
+                <span></span>
+            </div>
+            <div class="txt txt0" >
+                <span style="letter-spacing:8px;">手机号:</span>
+                <input id="phone" name="phone" type="text" class="txtphone" placeholder="请输入手机号"/>
+                <br>
+                <span></span>
+            </div>
+            <div class="txt txt0">
+                <input type="submit" id="btn" class="zhucebtn" value="立即注册"/>
+            </div>
+           </div>
+        </div>
+      </div>
+      
+      <div class="footer">
+        <div class="footer0">
+           <div class="footer_l">使用条款 | 隐私保护</div>
+           <div  class="footer_r">© 2020</div>
+        </div> 
+      </div>
+    </form>
+      <script type="text/javascript" src="/javascripts/jquery-1.11.1.min.js"></script>
+      <script type="text/javascript" src="/javascripts/jquery-3.1.1.min.js"></script>
+      <script type="text/javascript" src="/javascripts/jquery.min.js"></script>
+      <script src="/javascripts/zhuce.js"></script>
+      <script src="/javascripts/jq.js"></script>
+</body>
+</html>
