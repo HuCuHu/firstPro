@@ -17,7 +17,7 @@ var vieworderRouter = require('./routes/vieworder');
 var indexRouter = require('./routes/index');
 var shopRouter = require('./routes/shop');
 var singleRouter = require('./routes/single-product');
-// var backRouter = require('./routes/back');
+var goodsRouter = require('./routes/goods');
 
 
 var app = express();
@@ -50,7 +50,7 @@ app.use('/vieworder',vieworderRouter);
 app.use('/index',indexRouter);
 app.use('/shop',shopRouter);
 app.use('/single-product',singleRouter);
-// app.use('/back',backRouter);
+app.use('/goods',goodsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

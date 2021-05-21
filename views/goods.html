@@ -40,7 +40,7 @@
 					<li class="dropdown">
 						<a class="dropdown-toggle" data-toggle="collapse" data-target="#store-dropdown" href="#"><i class="icon-shopping-cart"></i> 商品 <b class="caret"></b></a>
 						<ul id="store-dropdown" class="collapse">
-							<li><a href="/goods">商品管理</a></li>
+                            <li><a href="/goods">商品管理</a></li>
 							<li><a href="/orders">订单详情</a></li>
 							<li><a href="/listing">订单查询</a></li>
 						</ul>
@@ -89,17 +89,17 @@
 					<div class="slate">
 					
 						<form class="form-inline">
-							<input type="text" class="input-large" placeholder="订单号 # 订单用户名...">
+							<input type="text" class="input-large" placeholder="商品名称或关键字">
 							<select class="span2">
-								<option value=""> - 时间区间 - </option>
+								<option value=""> - 价格区间 - </option>
 							</select>
 							<select class="span2">
-								<option value=""> - 时间区间 - </option>
+								<option value=""> - 价格区间 - </option>
 							</select>
 							<select class="span2">
-								<option value=""> - 订单状态 - </option>
+								<option value=""> - 商品类型 - </option>
 							</select>
-							<button type="submit" class="btn btn-primary">查询订单</button>
+							<button type="submit" class="btn btn-primary">查询商品</button>
 						</form>
 					
 					</div>
@@ -112,11 +112,7 @@
 				
 				<div class="span10 listing-buttons">
 				
-					<button class="btn btn-info">Action</button>
-				
-					<button class="btn btn-success">Action</button>
-				
-					<button class="btn btn-primary">Add New Order</button>
+					<button class="btn btn-primary">添加商品</button>
 				
 				</div>
 				
@@ -125,24 +121,13 @@
 					<div class="slate">
 					
 						<div class="page-header">
-							<div class="btn-group pull-right">
-								<button class="btn dropdown-toggle" data-toggle="dropdown">
-									<i class="icon-download-alt"></i> Export
-									<span class="caret"></span>
-								</button>
-								<ul class="dropdown-menu">
-									<li><a href="">CSV</a></li>
-									<li><a href="">Excel</a></li>
-									<li><a href="">PDF</a></li>
-								</ul>
-							</div>
-							<h2>Orders</h2>
+							<h2>商品详情</h2>
 						</div>
 					
 						<table class="orders-table table">
 						<thead>
 							<tr>
-								<th>订单</th>
+								<th>商品</th>
 								<th class="value">价格</th>
 								<th class="actions">商品详情</th>
 							</tr>
@@ -150,7 +135,7 @@
 						<tbody>
 							<% data.forEach((o,i)=>{ %>
 							<tr>
-								<td><a href="/vieworder">#<%= o.orderid %> - <%= o.username %></a> <span class="label label-<%= o.statuscolor %>"><%= o.status %></span><br /><span class="meta"><%= o.oupdatetime %></span></td>
+								<td><a href="/vieworder"><%= o.type %> - <%= o.name %></a> <span class="label label-<%= o.statuscolor %>"><%= o.status %></span><br /><span class="meta"><%= o.introduce %></span></td>
 								<td class="value">
 									$<%= o.price %>
 								</td>
@@ -180,16 +165,6 @@
 							<li><a href="#">Next</a></li>
 						</ul>
 					</div>
-				
-				</div>
-				
-				<div class="span5 listing-buttons pull-right">
-				
-					<button class="btn btn-info">Action</button>
-				
-					<button class="btn btn-success">Action</button>
-				
-					<button class="btn btn-primary">Add New Item</button>
 				
 				</div>
 				

@@ -18,12 +18,10 @@ var sql="SELECT * FROM `order` INNER JOIN product on `order`.pid = product.id IN
     throw err
    } else{
     router.get('/', function(req, res, next) {
-      res.render('listing',{
+      res.render('goods',{
         data:result
       });
     });
    }
    
  })
-
-module.exports = router;
