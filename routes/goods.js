@@ -11,7 +11,7 @@ var connection = mysql.createConnection({
 });
  
 connection.connect();
-var sql="SELECT * FROM `order` INNER JOIN product on `order`.pid = product.id INNER JOIN `user`  ON `order`.uid=`user`.id"
+var sql="SELECT * FROM `product`"
  connection.query(sql,function(err,result){
   console.log(result)
    if (err){
@@ -25,3 +25,4 @@ var sql="SELECT * FROM `order` INNER JOIN product on `order`.pid = product.id IN
    }
    
  })
+ module.exports = router;

@@ -14,6 +14,7 @@ a{ text-decoration:none}
 .theimg{ top:90px; left:270px}
 .secimg{top:90px; left:200px}
 .firimg{top:90px; left:56px}
+.main_center{text-align: center;}
 
 .main_right{ width:456px; height:386px; float:right; padding-right:36px;}
 .main_r_up{ height:74px;padding-top:20px;}

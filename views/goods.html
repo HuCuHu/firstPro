@@ -112,7 +112,7 @@
 				
 				<div class="span10 listing-buttons">
 				
-					<button class="btn btn-primary">添加商品</button>
+					<a class="btn btn-small btn-primary" href="/add">添加商品</a>
 				
 				</div>
 				
@@ -135,7 +135,7 @@
 						<tbody>
 							<% data.forEach((o,i)=>{ %>
 							<tr>
-								<td><a href="/vieworder"><%= o.type %> - <%= o.name %></a> <span class="label label-<%= o.statuscolor %>"><%= o.status %></span><br /><span class="meta"><%= o.introduce %></span></td>
+								<td><a href="/vieworder"><%= o.type %> - <%= o.name %></a> <span class="label label-<%= o.inventoryStatus %>">剩余:<%= o.inventory %></span><br /><span class="meta"><%= o.introduce %></span></td>
 								<td class="value">
 									$<%= o.price %>
 								</td>
