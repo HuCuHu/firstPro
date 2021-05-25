@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/zhuce.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/bootstrap.min.css">
+</head>
+<body>
+    <form action="/update" method="POST">
+    <div class="main_center">
+        <input id="id" name="id" type="text" class="txtphone" value="<%= data[0].id %>" style="display: none;"/>
+        <div class="txt txt0" >
+            <span style="letter-spacing:8px;">商品名:</span>
+            <input id="name" name="name" type="text" class="txtphone" placeholder="请输入商品名" value="<%= data[0].name %>"/>
+            <br>
+            <span></span>
+        </div>
+        <div class="txt txt0" >
+            <span style="letter-spacing:4px;">商品价格:</span>
+            <input id="price" name="price" type="number" class="txtphone" placeholder="请输入商品价格" value="<%= data[0].price %>"/>
+            <br>
+            <span></span>
+        </div>
+        <div class="txt txt0" >
+            <span style="letter-spacing:4px;">商品类型:</span>
+            <input id="type" name="type" type="text" class="txtphone" placeholder="请确认商品类型" value="<%= data[0].type %>"/>
+            <br>
+            <span></span>
+        </div>
+        <div class="txt txt0" >
+          <span style="letter-spacing:16px;">简介:</span>
+          <input id="introduce"  name="introduce" type="text" class="txtphone" placeholder="请输入商品简介" value="<%= data[0].introduce %>"/>
+          <br>
+          <span></span>
+      </div>
+      <div class="txt txt0" >
+          <span style="letter-spacing:16px;">颜色:</span>
+          <input id="color" name="color" type="text" class="txtphone" placeholder="请输入颜色" value="<%= data[0].color %>"/>
+          <br>
+          <span></span>
+      </div>
+      <div class="txt txt0" >
+        <span style="letter-spacing:4px;">上架数量:</span>
+        <input id="inventory" name="inventory" type="number" class="txtphone" placeholder="请输入上架数量" value="<%= data[0].inventory %>"/>
+        <br>
+        <span></span>
+    </div>
+      <div class="txt txt0">
+          <input type="submit" id="btn" class="zhucebtn" value="确认修改"/>
+      </div>
+     </div>
+  </div>
+</form>
+  <script type="text/javascript" src="/javascripts/jquery-1.11.1.min.js"></script>
+</body>
+</html>

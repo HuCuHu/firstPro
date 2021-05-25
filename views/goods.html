@@ -88,19 +88,14 @@
 				
 					<div class="slate">
 					
-						<form class="form-inline">
-							<input type="text" class="input-large" placeholder="商品名称或关键字">
-							<select class="span2">
-								<option value=""> - 价格区间 - </option>
-							</select>
-							<select class="span2">
-								<option value=""> - 价格区间 - </option>
-							</select>
-							<select class="span2">
-								<option value=""> - 商品类型 - </option>
-							</select>
-							<button type="submit" class="btn btn-primary">查询商品</button>
-						</form>
+						<!-- <form class="form-inline"> -->
+							<input type="text" class="input-large" id="s_name" placeholder="商品名称或关键字">
+							<input type="text" class="input-large" id="s_price1" placeholder=" - 最低价格 - ">
+							<input type="text" class="input-large" id="s_price2" placeholder=" - 最高价格 - ">
+							<input type="text" class="input-large" id="s_type" placeholder=" - 商品类型 - ">
+
+							<button type="submit" class="btn btn-primary" onclick="find()" id="find">查询商品</button>
+						<!-- </form> -->
 					
 					</div>
 				
@@ -129,18 +124,22 @@
 							<tr>
 								<th>商品</th>
 								<th class="value">价格</th>
-								<th class="actions">商品详情</th>
+								<th class="actions">商品管理</th>
+								<th class="actions">商品管理</th>
 							</tr>
 						</thead>
-						<tbody>
+						<tbody id="tbody"> 
 							<% data.forEach((o,i)=>{ %>
 							<tr>
-								<td><a href="/vieworder"><%= o.type %> - <%= o.name %></a> <span class="label label-<%= o.inventoryStatus %>">剩余:<%= o.inventory %></span><br /><span class="meta"><%= o.introduce %></span></td>
+								<td><a href="#"><%= o.type %> - <%= o.name %></a> <span class="label label-<%= o.inventoryStatus %>">剩余:<%= o.inventory %></span><br /><span class="meta"><%= o.introduce %></span></td>
 								<td class="value">
 									$<%= o.price %>
 								</td>
 								<td class="actions">
-									<a class="btn btn-small btn-primary" href="/vieworder">商品详情</a>
+									<a class="btn btn-small btn-primary del" href="/goods/del/<%= o.id %>">下架</a>
+								</td>
+								<td class="actions">
+									<a class="btn btn-small btn-primary" href="/update/toUpdate/<%= o.id %>">修改</a>
 								</td>
 							</tr>
 							<% }) %>
@@ -193,6 +192,7 @@
 <!-- Placed at the end of the document so the pages load faster -->
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 <script src="/javascripts/bootstrap.js"></script>
+<script src="/javascripts/ajax.js"></script>
 
 
 <div style="display:none"><script src='http://v7.cnzz.com/stat.php?id=155540&web_id=155540' language='JavaScript' charset='gb2312'></script></div>
