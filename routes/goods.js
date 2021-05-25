@@ -30,24 +30,34 @@ connection.connect();
   })
 });
 //  }else{
-  router.post('/', function (req, res) {
+  router.post('/find', function (req, res) {
     var name = req.body.s_name;
     var price1 = req.body.s_price1;
     var price2 = req.body.s_price2;
-    var type = req.body.s_type;
     
   
-    var sql = "SELECT * FROM `product` where name like '%"+name+"%' AND price>='"+price1+"' && price<='"+price2+"' AND type='"+type+"'";
-  
+    var sql = "select * from `product`";
+
+    if (name) {
+        sql += " and name like'%" + name + "%' ";
+    }
+
+    if (price1) {
+        sql += " and price>=" + price1 + " ";
+    }
+    if (price2) {
+      sql += " and price<=" + price2 + " ";
+
+  }
+    sql = sql.replace("and","where");
     
     connection.query(sql,function(err,result){
       console.log(result)
       if (err){
         throw err
        } else{
-        res.json({
-              data:result
-            });
+        console.log(sql)
+        res.render("goods", {data: result, s_name: name, s_price1: price1,s_price2: price2});
         }
     });
   });

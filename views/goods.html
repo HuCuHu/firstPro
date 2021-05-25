@@ -88,14 +88,13 @@
 				
 					<div class="slate">
 					
-						<!-- <form class="form-inline"> -->
-							<input type="text" class="input-large" id="s_name" placeholder="商品名称或关键字">
-							<input type="text" class="input-large" id="s_price1" placeholder=" - 最低价格 - ">
-							<input type="text" class="input-large" id="s_price2" placeholder=" - 最高价格 - ">
-							<input type="text" class="input-large" id="s_type" placeholder=" - 商品类型 - ">
+						<form class="form-inline" action="/goods/find" method="POST">
+							<input type="text" class="input-large" name="s_name" placeholder="商品名称或关键字" value="<%= data.name %>">
+							<input type="text" class="input-large" name="s_price1" placeholder=" - 最低价格 - " value="<%= data.price %>">
+							<input type="text" class="input-large" name="s_price2" placeholder=" - 最高价格 - " value="<%= data.price %>"> 
 
-							<button type="submit" class="btn btn-primary" onclick="find()" id="find">查询商品</button>
-						<!-- </form> -->
+							<button type="submit" class="btn btn-primary" id="find">查询商品</button>
+						</form>
 					
 					</div>
 				
