@@ -20,6 +20,7 @@ var singleRouter = require('./routes/single-product');
 var goodsRouter = require('./routes/goods');
 var addRouter = require('./routes/add');
 var updateRouter = require('./routes/update');
+// var mysqlRouter = require('./routes/mysql/mysql');
 
 
 
@@ -56,6 +57,7 @@ app.use('/single-product',singleRouter);
 app.use('/goods',goodsRouter);
 app.use('/add',addRouter);
 app.use('/update',updateRouter);
+// app.use('./mysql/mysql',mysqlRouter);
 
 
 // catch 404 and forward to error handler

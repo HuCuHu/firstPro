@@ -1,18 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var mysql = require('mysql');
-var sd = require('silly-datetime');
-var time=sd.format(new Date(), 'YYYY-MM-DD HH:mm');
-
- 
-var connection = mysql.createConnection({
-  host     : 'localhost',
-  user     : 'root',
-  password : '123456',
-  database : 'project'
-});
- 
-connection.connect();
+var connection = require('./mysql/mysql');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {

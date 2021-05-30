@@ -88,8 +88,11 @@
 				
 					<div class="slate">
 					
-						<form class="form-inline">
+						<form class="form-inline" action="/orders" method="POST">
 							<input type="text" class="input-large" placeholder="订单号 # 订单用户名...">
+							<input type="text" class="input-large" placeholder=" - 时间区间 - ">
+							<input type="text" class="input-large" placeholder=" - 时间区间 - ">
+							<input type="text" class="input-large" placeholder=" - 订单状态 - ">
 							<select class="span2">
 								<option value=""> - 时间区间 - </option>
 							</select>
@@ -110,34 +113,10 @@
 			
 			<div class="row">
 				
-				<div class="span10 listing-buttons">
-				
-					<button class="btn btn-info">Action</button>
-				
-					<button class="btn btn-success">Action</button>
-				
-					<button class="btn btn-primary">Add New Order</button>
-				
-				</div>
 				
 				<div class="span10">
 				
 					<div class="slate">
-					
-						<div class="page-header">
-							<div class="btn-group pull-right">
-								<button class="btn dropdown-toggle" data-toggle="dropdown">
-									<i class="icon-download-alt"></i> Export
-									<span class="caret"></span>
-								</button>
-								<ul class="dropdown-menu">
-									<li><a href="">CSV</a></li>
-									<li><a href="">Excel</a></li>
-									<li><a href="">PDF</a></li>
-								</ul>
-							</div>
-							<h2>Orders</h2>
-						</div>
 					
 						<table class="orders-table table">
 						<thead>
@@ -155,7 +134,7 @@
 									$<%= o.price %>
 								</td>
 								<td class="actions">
-									<a class="btn btn-small btn-primary" href="/vieworder">商品详情</a>
+									<a class="btn btn-small btn-primary" href="/update/toUpdate/<%= o.id %>">订单状态</a>
 								</td>
 							</tr>
 							<% }) %>
@@ -182,17 +161,7 @@
 					</div>
 				
 				</div>
-				
-				<div class="span5 listing-buttons pull-right">
-				
-					<button class="btn btn-info">Action</button>
-				
-					<button class="btn btn-success">Action</button>
-				
-					<button class="btn btn-primary">Add New Item</button>
-				
-				</div>
-				
+			
 			</div>
 			
 		<div class="row">

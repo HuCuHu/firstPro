@@ -125,7 +125,8 @@
   transition: all 0.3s ease 0s;
 }
 .product-img img {
-  width: 100%;
+  width: 262.5px;
+  height: 135.6px;
 }
 .product-info {
   background: #f6f6f6 none repeat scroll 0 0;

@@ -127,7 +127,7 @@
 								<th class="actions">商品管理</th>
 							</tr>
 						</thead>
-						<tbody id="tbody"> 
+						<tbody id="tbody">  
 							<% data.forEach((o,i)=>{ %>
 							<tr>
 								<td><a href="#"><%= o.type %> - <%= o.name %></a> <span class="label label-<%= o.inventoryStatus %>">剩余:<%= o.inventory %></span><br /><span class="meta"><%= o.introduce %></span></td>
