@@ -18,5 +18,25 @@ router.get('/', function(req, res, next) {
  })
  
 });
+router.post('/serach', function (req, res) {
+  var key = req.body.s_key;
+  
+  var sqls = "SELECT * FROM `picture` INNER JOIN product on `picture`.pid = product.id where name like ?";
+
+  // if (key) {
+  //     sqls += " and name like'%" + key + "%' ";
+  // }
+
+  // sqls = sqls.replace("and","where");
+  
+  connection.query(sqls,["%"+key+"%"],function(err,result){
+    if (err){
+      throw err
+     } else{
+      console.log(sqls)
+      res.render("shop", {data: result, s_key: key});
+      }
+  });
+});
 
 module.exports = router;

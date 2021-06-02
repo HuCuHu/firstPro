@@ -125,7 +125,7 @@
   transition: all 0.3s ease 0s;
 }
 .product-img img {
-  width: 262.5px;
+  width: 100%;
   height: 135.6px;
 }
 .product-info {

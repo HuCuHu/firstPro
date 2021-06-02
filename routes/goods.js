@@ -23,7 +23,7 @@ var connection = require('./mysql/mysql');
     var price2 = req.body.s_price2;
     
   
-    var sql = "select * from `product`";
+    var sql = "select * from `product` where 1=1";
 
     if (name) {
         sql += " and name like'%" + name + "%' ";
@@ -36,8 +36,9 @@ var connection = require('./mysql/mysql');
       sql += " and price<=" + price2 + " ";
 
   }
-    sql = sql.replace("and","where");
-    
+
+  
+
     connection.query(sql,function(err,result){
       console.log(result)
       if (err){

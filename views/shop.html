@@ -10,26 +10,26 @@
 
 <!-- All CSS Files -->
 <!-- Bootstrap fremwork main css -->
-<link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+<link rel="stylesheet" href="http://localhost:3000/stylesheets/bootstrap.min.css">
 <!-- Nivo-slider css -->
-<link rel="stylesheet" href="/stylesheets/nivo-slider.css">
+<link rel="stylesheet" href="http://localhost:3000/stylesheets/nivo-slider.css">
 <!-- This core.css file contents all plugings css file. -->
-<link rel="stylesheet" href="/stylesheets/core.css">
+<link rel="stylesheet" href="http://localhost:3000/stylesheets/core.css">
 <!-- Theme shortcodes/elements style -->
-<link rel="stylesheet" href="/stylesheets/shortcode/shortcodes.css">
+<link rel="stylesheet" href="http://localhost:3000/stylesheets/shortcode/shortcodes.css">
 <!-- Theme main style -->
-<link rel="stylesheet" href="/stylesheets/style.css">
+<link rel="stylesheet" href="http://localhost:3000/stylesheets/style.css">
 <!-- Responsive css -->
-<link rel="stylesheet" href="/stylesheets/responsive.css">
+<link rel="stylesheet" href="http://localhost:3000/stylesheets/responsive.css">
 <!-- User style -->
-<link rel="stylesheet" href="/stylesheets/custom.css">
+<link rel="stylesheet" href="http://localhost:3000/stylesheets/custom.css">
 
 <!-- Style customizer (Remove these two lines please) -->
-<link rel="stylesheet" href="/stylesheets/style-customizer.css">
+<link rel="stylesheet" href="http://localhost:3000/stylesheets/style-customizer.css">
 <link href="#" data-style="styles" rel="stylesheet">
 
 <!-- Modernizr JS -->
-<script src="/javascripts/modernizr-2.8.3.min.js"></script>
+<script src="http://localhost:3000/javascripts/modernizr-2.8.3.min.js"></script>
 </head>
 
 <body>
@@ -51,7 +51,7 @@
 						<div class="col-md-2 col-sm-6 col-xs-12">
 							<div class="logo">
 								<a href="/index">
-									<img src="img/logo/logo.png" alt="main logo">
+									<img src="http://localhost:3000/img/logo/logo.png" alt="main logo">
 								</a>
 							</div>
 						</div>
@@ -120,7 +120,7 @@
 													<div class="single-cart clearfix">
 														<div class="cart-img f-left">
 															<a href="#">
-																<img src="img/cart/1.jpg" alt="Cart Product" />
+																<img src="http://localhost:3000/img/cart/1.jpg" alt="Cart Product" />
 															</a>
 															<div class="del-icon">
 																<a href="#">
@@ -147,7 +147,7 @@
 													<div class="single-cart clearfix">
 														<div class="cart-img f-left">
 															<a href="#">
-																<img src="img/cart/1.jpg" alt="Cart Product" />
+																<img src="http://localhost:3000/img/cart/1.jpg" alt="Cart Product" />
 															</a>
 															<div class="del-icon">
 																<a href="#">
@@ -216,7 +216,6 @@
 							<ul>
 								<li><a href="/index">主页</a></li>
 								<li><a href="/shop">商城</a></li>
-								<li><a href="/single-product">商品详情</a></li>
 							</ul>
 						</nav>
 					</div>
@@ -291,13 +290,13 @@
 										<div class="col-md-4 col-sm-4 col-xs-12">
 											<div class="product-item">
 												<div class="product-img">
-													<a href="/single-product">
-														<img src="<%= o.p_url %>" alt="">
+													<a href="/single-product/single/<%= o.id %>">
+														<img src="http://localhost:3000/<%= o.p_url %>" alt="">
 													</a>
 												</div>
 												<div class="product-info">
 													<h6 class="product-title">
-														<a href="single-product.html"><%= o.name %> </a>
+														<a href="/single-product/single/<%= o.id %>"><%= o.name %> </a>
 													</h6>
 													<div class="pro-rating">
 														<a href="#"><i class="zmdi zmdi-star"></i></a>
@@ -336,14 +335,14 @@
 										<div class="col-md-12">
 											<div class="shop-list product-item">
 												<div class="product-img">
-													<a href="/single-product">
-														<img src="<%= o.p_url %>" alt="">
+													<a href="/single-product/single/<%= o.id %>">
+														<img src="http://localhost:3000/<%= o.p_url %>" alt="">
 													</a>
 												</div>
 												<div class="product-info">
 													<div class="clearfix">
 														<h6 class="product-title f-left">
-															<a href="single-product.html"><%= o.name %> </a>
+															<a href="/single-product/single/<%= o.id %>"><%= o.name %> </a>
 														</h6>
 														<div class="pro-rating f-right">
 															<a href="#"><i class="zmdi zmdi-star"></i></a>
@@ -395,85 +394,12 @@
 					<div class="col-md-3 col-md-pull-9 col-sm-12">
 						<!-- widget-search -->
 						<aside class="widget-search mb-30">
-							<form action="#">
-								<input type="text" placeholder="Search here...">
-								<button type="submit"><i class="zmdi zmdi-search"></i></button>
+							<form action="/shop/serach" method="POST">
+								<input type="text" name="s_key" placeholder="Search here...">
+								<button type="submit" ><i class="zmdi zmdi-search"></i></button>
 							</form>
 						</aside>
-						<!-- widget-categories -->
-						<aside class="widget widget-categories box-shadow mb-30">
-							<h6 class="widget-title border-left mb-20">Categories</h6>
-							<div id="cat-treeview" class="product-cat">
-								<ul>
-									<li class="closed"><a href="#">Brand One</a>
-										<ul>
-											<li><a href="#">Mobile</a></li>
-											<li><a href="#">Tab</a></li>
-											<li><a href="#">Watch</a></li>
-											<li><a href="#">Head Phone</a></li>
-											<li><a href="#">Memory</a></li>
-										</ul>
-									</li>                                       
-									<li class="open"><a href="#">Brand Two</a>
-										<ul>
-											<li><a href="#">Mobile</a></li>
-											<li><a href="#">Tab</a></li>
-											<li><a href="#">Watch</a></li>
-											<li><a href="#">Head Phone</a></li>
-											<li><a href="#">Memory</a></li>
-										</ul>
-									</li>
-									<li class="closed"><a href="#">Accessories</a>
-										<ul>
-											<li><a href="#">Footwear</a></li>
-											<li><a href="#">Sunglasses</a></li>
-											<li><a href="#">Watches</a></li>
-											<li><a href="#">Utilities</a></li>
-										</ul>
-									</li>
-									<li class="closed"><a href="#">Top Brands</a>
-										<ul>
-											<li><a href="#">Mobile</a></li>
-											<li><a href="#">Tab</a></li>
-											<li><a href="#">Watch</a></li>
-											<li><a href="#">Head Phone</a></li>
-											<li><a href="#">Memory</a></li>
-										</ul>
-									</li>
-									<li class="closed"><a href="#">Jewelry</a>
-										<ul>
-											<li><a href="#">Footwear</a></li>
-											<li><a href="#">Sunglasses</a></li>
-											<li><a href="#">Watches</a></li>
-											<li><a href="#">Utilities</a></li>
-										</ul>
-									</li>
-								</ul>
-							</div>
-						</aside>
-						<!-- shop-filter -->
-						<aside class="widget shop-filter box-shadow mb-30">
-							<h6 class="widget-title border-left mb-20">Price</h6>
-							<div class="price_filter">
-								<div class="price_slider_amount">
-									<input type="submit"  value="You range :"> 
-									<input type="text" id="amount" name="price"  placeholder="Add Your Price" /> 
-								</div>
-								<div id="slider-range"></div>
-							</div>
-						</aside>
-						<!-- widget-color -->
-						<aside class="widget widget-color box-shadow mb-30">
-							<h6 class="widget-title border-left mb-20">color</h6>
-							<ul>
-								<li class="color-1"><a href="#">LightSalmon</a></li>
-								<li class="color-2"><a href="#">Dark Salmon</a></li>
-								<li class="color-3"><a href="#">Tomato</a></li>
-								<li class="color-4"><a href="#">Deep Sky Blue</a></li>
-								<li class="color-5"><a href="#">Electric Purple</a></li>
-								<li class="color-6"><a href="#">Atlantis</a></li>
-							</ul>
-						</aside>
+					
 						                             
 					</div>
 				</div>
@@ -490,15 +416,15 @@
 <!-- Placed JS at the end of the document so the pages load faster -->
 
 <!-- jquery latest version -->
-<script src="/javascripts/jquery-3.1.1.min.js"></script>
+<script src="http://localhost:3000/javascripts/jquery-3.1.1.min.js"></script>
 <!-- Bootstrap framework js -->
-<script src="/javascripts/bootstrap.min.js"></script>
+<script src="http://localhost:3000/javascripts/bootstrap.min.js"></script>
 <!-- jquery.nivo.slider js -->
-<script src="/javascripts/jquery.nivo.slider.js"></script>
+<script src="http://localhost:3000/javascripts/jquery.nivo.slider.js"></script>
 <!-- All js plugins included in this file. -->
-<script src="/javascripts/plugins.js"></script>
+<script src="http://localhost:3000/javascripts/plugins.js"></script>
 <!-- Main js file that contents all jQuery plugins activation. -->
-<script src="/javascripts/main.js"></script>
+<script src="http://localhost:3000/javascripts/main.js"></script>
 
 </body>
 

@@ -10,26 +10,26 @@
 
     <!-- All CSS Files -->
     <!-- Bootstrap fremwork main css -->
-    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+    <link rel="stylesheet" href="http://localhost:3000/stylesheets/bootstrap.min.css">
     <!-- Nivo-slider css -->
-    <link rel="stylesheet" href="/stylesheets/nivo-slider.css">
+    <link rel="stylesheet" href="http://localhost:3000/stylesheets/nivo-slider.css">
     <!-- This core.css file contents all plugings css file. -->
-    <link rel="stylesheet" href="/stylesheets/core.css">
+    <link rel="stylesheet" href="http://localhost:3000/stylesheets/core.css">
     <!-- Theme shortcodes/elements style -->
-    <link rel="stylesheet" href="/stylesheets/shortcode/shortcodes.css">
+    <link rel="stylesheet" href="http://localhost:3000/stylesheets/shortcode/shortcodes.css">
     <!-- Theme main style -->
-    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="http://localhost:3000/stylesheets/style.css">
     <!-- Responsive css -->
-    <link rel="stylesheet" href="/stylesheets/responsive.css">
+    <link rel="stylesheet" href="http://localhost:3000/stylesheets/responsive.css">
     <!-- User style -->
-    <link rel="stylesheet" href="/stylesheets/custom.css">
+    <link rel="stylesheet" href="http://localhost:3000/stylesheets/custom.css">
     
     <!-- Style customizer (Remove these two lines please) -->
-    <link rel="stylesheet" href="/stylesheets/style-customizer.css">
+    <link rel="stylesheet" href="http://localhost:3000/stylesheets/style-customizer.css">
     <link href="#" data-style="styles" rel="stylesheet">
 
     <!-- Modernizr JS -->
-    <script src="/javascripts/modernizr-2.8.3.min.js"></script>
+    <script src="http://localhost:3000/javascripts/modernizr-2.8.3.min.js"></script>
 </head>
 
 <body>
@@ -51,7 +51,7 @@
                             <div class="col-md-2 col-sm-6 col-xs-12">
                                 <div class="logo">
                                     <a href="/index">
-                                        <img src="img/logo/logo.png" alt="main logo">
+                                        <img src="http://localhost:3000/img/logo/logo.png" alt="main logo">
                                     </a>
                                 </div>
                             </div>
@@ -233,10 +233,10 @@
                     <div class="row">
                         <div class="col-xs-12">
                             <div class="breadcrumbs-inner">
-                                <h1 class="breadcrumbs-title">Single Product</h1>
+                                <h1 class="breadcrumbs-title">商品详情</h1>
                                 <ul class="breadcrumb-list">
-                                    <li><a href="index.html">Home</a></li>
-                                    <li>Single Product</li>
+                                    <li><a href="/index">主页</a></li>
+                                    <li>商品详情</li>
                                 </ul>
                             </div>
                         </div>
@@ -259,52 +259,18 @@
                                 <div class="row">
                                     <!-- imgs-zoom-area start -->
                                     <div class="col-md-5 col-sm-5 col-xs-12">
+                                        <input id="id" name="id" type="text" class="txtphone" value="<%= data[0].id %>" style="display: none;"/>
                                         <div class="imgs-zoom-area">
-                                            <img id="zoom_03" src="img/product/6.jpg" data-zoom-image="img/product/6.jpg" alt="">
-                                            <div class="row">
-                                                <div class="col-xs-12">
-                                                    <div id="gallery_01" class="carousel-btn slick-arrow-3 mt-30">
-                                                        <div class="p-c">
-                                                            <a href="#" data-image="img/product/2.jpg" data-zoom-image="img/product/2.jpg">
-                                                                <img class="zoom_03" src="img/product/2.jpg" alt="">
-                                                            </a>
-                                                        </div>
-                                                        <div class="p-c">
-                                                            <a href="#" data-image="img/product/3.jpg" data-zoom-image="img/product/3.jpg">
-                                                                <img class="zoom_03" src="img/product/3.jpg" alt="">
-                                                            </a>
-                                                        </div>
-                                                        <div class="p-c">
-                                                            <a href="#" data-image="img/product/4.jpg" data-zoom-image="img/product/4.jpg">
-                                                                <img class="zoom_03" src="img/product/4.jpg" alt="">
-                                                            </a>
-                                                        </div>
-                                                        <div class="p-c">
-                                                            <a href="#" data-image="img/product/5.jpg" data-zoom-image="img/product/5.jpg">
-                                                                <img class="zoom_03" src="img/product/5.jpg" alt="">
-                                                            </a>
-                                                        </div>
-                                                        <div class="p-c">
-                                                            <a href="#" data-image="img/product/6.jpg" data-zoom-image="img/product/6.jpg">
-                                                                <img class="zoom_03" src="img/product/6.jpg" alt="">
-                                                            </a>
-                                                        </div>
-                                                        <div class="p-c">
-                                                            <a href="#" data-image="img/product/7.jpg" data-zoom-image="img/product/7.jpg">
-                                                                <img class="zoom_03" src="img/product/7.jpg" alt="">
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                            <img id="zoom_03" src="http://localhost:3000/<%= data[0].p_url %>" data-zoom-image="<%= data[0].p_url %>" alt="">
+                                            
                                         </div>
                                     </div>
                                     <!-- imgs-zoom-area end -->
                                     <!-- single-product-info start -->
                                     <div class="col-md-7 col-sm-7 col-xs-12"> 
                                         <div class="single-product-info">
-                                            <h3 class="text-black-1">Dummy Product Name </h3>
-                                            <h6 class="brand-name-2">brand name</h6>
+                                            <h3 class="text-black-1"><%= data[0].name %> </h3>
+                                            <h6 class="brand-name-2"><%= data[0].type %></h6>
                                             <!--  hr -->
                                             <hr>
                                             <!-- single-pro-color-rating -->
@@ -360,7 +326,7 @@
                                             <!-- hr -->
                                             <hr>
                                             <!-- single-product-price -->
-                                            <h3 class="pro-price">Price: $ 869.00</h3>
+                                            <h3 class="pro-price">Price: $ <%= data[0].price %></h3>
                                             <!--  hr -->
                                             <hr>
 											<div>
@@ -373,80 +339,7 @@
                                     <!-- single-product-info end -->
                                 </div>
 								<!-- single-product-tab -->
-								<div class="row">
-									<div class="col-md-12">
-										<!-- hr -->
-										<hr>
-										<div class="single-product-tab">
-											<ul class="reviews-tab mb-20">
-												<li  class="active"><a href="#description" data-toggle="tab">description</a></li>
-												<li ><a href="#information" data-toggle="tab">information</a></li>
-												<li ><a href="#reviews" data-toggle="tab">reviews</a></li>
-											</ul>
-											<div class="tab-content">
-												<div role="tabpanel" class="tab-pane active" id="description">
-													<p>There are many variations of passages of Lorem Ipsum available, but the majo Rity have be suffered alteration in some form, by injected humou or randomis Rity have be suffered alteration in some form, by injected humou or randomis words which donot look even slightly believable. If you are going to use a passage Lorem Ipsum.</p>
-													<p>rerum blanditiis dolore dignissimos expedita consequatur deleniti consectetur non exercitationem. rerum blanditiis dolore dignissimos expedita consequatur deleniti consectetur non exercitationem.</p>
-												</div>
-												<div role="tabpanel" class="tab-pane" id="information">
-													<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem, neque fugit inventore quo dignissimos est iure natus quis nam illo officiis,  deleniti consectetur non ,aspernatur.</p>
-													<p>rerum blanditiis dolore dignissimos expedita consequatur deleniti consectetur non exercitationem.</p>
-												</div>
-												<div role="tabpanel" class="tab-pane" id="reviews">
-													<!-- reviews-tab-desc -->
-													<div class="reviews-tab-desc">
-														<!-- single comments -->
-														<div class="media mt-30">
-															<div class="media-left">
-																<a href="#"><img class="media-object" src="img/author/1.jpg" alt="#"></a>
-															</div>
-															<div class="media-body">
-																<div class="clearfix">
-																	<div class="name-commenter pull-left">
-																		<h6 class="media-heading"><a href="#">Gerald Barnes</a></h6>
-																		<p class="mb-10">27 Jun, 2017 at 2:30pm</p>
-																	</div>
-																	<div class="pull-right">
-																		<ul class="reply-delate">
-																			<li><a href="#">Reply</a></li>
-																			<li>/</li>
-																			<li><a href="#">Delate</a></li>
-																		</ul>
-																	</div>
-																</div>
-																<p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer accumsan egestas .</p>
-															</div>
-														</div>
-														<!-- single comments -->
-														<div class="media mt-30">
-															<div class="media-left">
-																<a href="#"><img class="media-object" src="img/author/2.jpg" alt="#"></a>
-															</div>
-															<div class="media-body">
-																<div class="clearfix">
-																	<div class="name-commenter pull-left">
-																		<h6 class="media-heading"><a href="#">Gerald Barnes</a></h6>
-																		<p class="mb-10">27 Jun, 2017 at 2:30pm</p>
-																	</div>
-																	<div class="pull-right">
-																		<ul class="reply-delate">
-																			<li><a href="#">Reply</a></li>
-																			<li>/</li>
-																			<li><a href="#">Delate</a></li>
-																		</ul>
-																	</div>
-																</div>
-																<p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer accumsan egestas .</p>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-										<!--  hr -->
-										<hr>
-									</div>
-								</div>
+								
                             </div>
                             <!-- single-product-area end -->
                             <div class="related-product-area">
@@ -460,17 +353,18 @@
                                 </div>
                                 <div class="row">
                                     <div class="active-related-product">
+                                        <% data.forEach((o,i)=>{ %>
                                         <!-- product-item start -->
                                         <div class="col-xs-12">
                                             <div class="product-item">
                                                 <div class="product-img">
-                                                    <a href="single-product.html">
-                                                        <img src="img/product/1.jpg" alt="">
+                                                    <a href="/single-product">
+                                                        <img src="http://localhost:3000/<%= o.p_url %>" alt="">
                                                     </a>
                                                 </div>
                                                 <div class="product-info">
                                                     <h6 class="product-title">
-                                                        <a href="single-product.html">Product Name</a>
+                                                        <a href="/single-product"><%= o.name %></a>
                                                     </h6>
                                                     <div class="pro-rating">
                                                         <a href="#"><i class="zmdi zmdi-star"></i></a>
@@ -479,7 +373,7 @@
                                                         <a href="#"><i class="zmdi zmdi-star-half"></i></a>
                                                         <a href="#"><i class="zmdi zmdi-star-outline"></i></a>
                                                     </div>
-                                                    <h3 class="pro-price">$ 869.00</h3>
+                                                    <h3 class="pro-price">$ <%= o.price %></h3>
                                                     <ul class="action-button">
                                                         <li>
                                                             <a href="#" title="Wishlist"><i class="zmdi zmdi-favorite"></i></a>
@@ -498,246 +392,12 @@
                                             </div>
                                         </div>
                                         <!-- product-item end -->
-                                        <!-- product-item start -->
-                                        <div class="col-xs-12">
-                                            <div class="product-item">
-                                                <div class="product-img">
-                                                    <a href="single-product.html">
-                                                        <img src="img/product/1.jpg" alt="">
-                                                    </a>
-                                                </div>
-                                                <div class="product-info">
-                                                    <h6 class="product-title">
-                                                        <a href="single-product.html">Product Name</a>
-                                                    </h6>
-                                                    <div class="pro-rating">
-                                                        <a href="#"><i class="zmdi zmdi-star"></i></a>
-                                                        <a href="#"><i class="zmdi zmdi-star"></i></a>
-                                                        <a href="#"><i class="zmdi zmdi-star"></i></a>
-                                                        <a href="#"><i class="zmdi zmdi-star-half"></i></a>
-                                                        <a href="#"><i class="zmdi zmdi-star-outline"></i></a>
-                                                    </div>
-                                                    <h3 class="pro-price">$ 869.00</h3>
-                                                    <ul class="action-button">
-                                                        <li>
-                                                            <a href="#" title="Wishlist"><i class="zmdi zmdi-favorite"></i></a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="#" data-toggle="modal"  data-target="#productModal" title="Quickview"><i class="zmdi zmdi-zoom-in"></i></a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="#" title="Compare"><i class="zmdi zmdi-refresh"></i></a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="#" title="Add to cart"><i class="zmdi zmdi-shopping-cart-plus"></i></a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- product-item end -->
-                                        <!-- product-item start -->
-                                        <div class="col-xs-12">
-                                            <div class="product-item">
-                                                <div class="product-img">
-                                                    <a href="single-product.html">
-                                                        <img src="img/product/1.jpg" alt="">
-                                                    </a>
-                                                </div>
-                                                <div class="product-info">
-                                                    <h6 class="product-title">
-                                                        <a href="single-product.html">Product Name</a>
-                                                    </h6>
-                                                    <div class="pro-rating">
-                                                        <a href="#"><i class="zmdi zmdi-star"></i></a>
-                                                        <a href="#"><i class="zmdi zmdi-star"></i></a>
-                                                        <a href="#"><i class="zmdi zmdi-star"></i></a>
-                                                        <a href="#"><i class="zmdi zmdi-star-half"></i></a>
-                                                        <a href="#"><i class="zmdi zmdi-star-outline"></i></a>
-                                                    </div>
-                                                    <h3 class="pro-price">$ 869.00</h3>
-                                                    <ul class="action-button">
-                                                        <li>
-                                                            <a href="#" title="Wishlist"><i class="zmdi zmdi-favorite"></i></a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="#" data-toggle="modal"  data-target="#productModal" title="Quickview"><i class="zmdi zmdi-zoom-in"></i></a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="#" title="Compare"><i class="zmdi zmdi-refresh"></i></a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="#" title="Add to cart"><i class="zmdi zmdi-shopping-cart-plus"></i></a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- product-item end -->
-                                        <!-- product-item start -->
-                                        <div class="col-xs-12">
-                                            <div class="product-item">
-                                                <div class="product-img">
-                                                    <a href="single-product.html">
-                                                        <img src="img/product/1.jpg" alt="">
-                                                    </a>
-                                                </div>
-                                                <div class="product-info">
-                                                    <h6 class="product-title">
-                                                        <a href="single-product.html">Product Name</a>
-                                                    </h6>
-                                                    <div class="pro-rating">
-                                                        <a href="#"><i class="zmdi zmdi-star"></i></a>
-                                                        <a href="#"><i class="zmdi zmdi-star"></i></a>
-                                                        <a href="#"><i class="zmdi zmdi-star"></i></a>
-                                                        <a href="#"><i class="zmdi zmdi-star-half"></i></a>
-                                                        <a href="#"><i class="zmdi zmdi-star-outline"></i></a>
-                                                    </div>
-                                                    <h3 class="pro-price">$ 869.00</h3>
-                                                    <ul class="action-button">
-                                                        <li>
-                                                            <a href="#" title="Wishlist"><i class="zmdi zmdi-favorite"></i></a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="#" data-toggle="modal"  data-target="#productModal" title="Quickview"><i class="zmdi zmdi-zoom-in"></i></a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="#" title="Compare"><i class="zmdi zmdi-refresh"></i></a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="#" title="Add to cart"><i class="zmdi zmdi-shopping-cart-plus"></i></a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- product-item end -->
+                                        <% }) %>
                                     </div>   
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-3 col-xs-12">
-                            <!-- widget-search -->
-                            <aside class="widget-search mb-30">
-                                <form action="#">
-                                    <input type="text" placeholder="Search here...">
-                                    <button type="submit"><i class="zmdi zmdi-search"></i></button>
-                                </form>
-                            </aside>
-                            <!-- widget-categories -->
-                            <aside class="widget widget-categories box-shadow mb-30">
-                                <h6 class="widget-title border-left mb-20">Categories</h6>
-                                <div id="cat-treeview" class="product-cat">
-                                    <ul>
-                                        <li class="closed"><a href="#">Brand One</a>
-                                            <ul>
-                                                <li><a href="#">Mobile</a></li>
-                                                <li><a href="#">Tab</a></li>
-                                                <li><a href="#">Watch</a></li>
-                                                <li><a href="#">Head Phone</a></li>
-                                                <li><a href="#">Memory</a></li>
-                                            </ul>
-                                        </li>                                       
-                                        <li class="open"><a href="#">Brand Two</a>
-                                            <ul>
-                                                <li><a href="#">Mobile</a></li>
-                                                <li><a href="#">Tab</a></li>
-                                                <li><a href="#">Watch</a></li>
-                                                <li><a href="#">Head Phone</a></li>
-                                                <li><a href="#">Memory</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="closed"><a href="#">Accessories</a>
-                                            <ul>
-                                                <li><a href="#">Footwear</a></li>
-                                                <li><a href="#">Sunglasses</a></li>
-                                                <li><a href="#">Watches</a></li>
-                                                <li><a href="#">Utilities</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="closed"><a href="#">Top Brands</a>
-                                            <ul>
-                                                <li><a href="#">Mobile</a></li>
-                                                <li><a href="#">Tab</a></li>
-                                                <li><a href="#">Watch</a></li>
-                                                <li><a href="#">Head Phone</a></li>
-                                                <li><a href="#">Memory</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="closed"><a href="#">Jewelry</a>
-                                            <ul>
-                                                <li><a href="#">Footwear</a></li>
-                                                <li><a href="#">Sunglasses</a></li>
-                                                <li><a href="#">Watches</a></li>
-                                                <li><a href="#">Utilities</a></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </aside>
-                            <!-- operating-system -->
-                            <aside class="widget operating-system box-shadow mb-30">
-                                <h6 class="widget-title border-left mb-20">operating system</h6>
-                                <form action="action_page.php">
-                                    <label><input type="checkbox" name="operating-1" value="phone-1">Windows Phone</label><br>
-                                    <label><input type="checkbox" name="operating-1" value="phone-1">Bleckgerry ios</label><br>
-                                    <label><input type="checkbox" name="operating-1" value="phone-1">Android</label><br>
-                                    <label><input type="checkbox" name="operating-1" value="phone-1">ios</label><br>
-                                    <label><input type="checkbox" name="operating-1" value="phone-1">Windows Phone</label><br>
-                                    <label><input type="checkbox" name="operating-1" value="phone-1">Symban</label><br>
-                                    <label class="mb-0"><input type="checkbox" name="operating-1" value="phone-1">Bleckgerry os</label><br>
-                                </form>
-                            </aside>
-                            <!-- widget-product -->
-                            <aside class="widget widget-product box-shadow">
-                                <h6 class="widget-title border-left mb-20">recent products</h6>
-                                <!-- product-item start -->
-                                <div class="product-item">
-                                    <div class="product-img">
-                                        <a href="single-product.html">
-                                            <img src="img/product/4.jpg" alt="">
-                                        </a>
-                                    </div>
-                                    <div class="product-info">
-                                        <h6 class="product-title">
-                                            <a href="single-product.html">Product Name</a>
-                                        </h6>
-                                        <h3 class="pro-price">$ 869.00</h3>
-                                    </div>
-                                </div>
-                                <!-- product-item end -->
-                                <!-- product-item start -->
-                                <div class="product-item">
-                                    <div class="product-img">
-                                        <a href="single-product.html">
-                                            <img src="img/product/8.jpg" alt="">
-                                        </a>
-                                    </div>
-                                    <div class="product-info">
-                                        <h6 class="product-title">
-                                            <a href="single-product.html">Product Name</a>
-                                        </h6>
-                                        <h3 class="pro-price">$ 869.00</h3>
-                                    </div>
-                                </div>
-                                <!-- product-item end -->
-                                <!-- product-item start -->
-                                <div class="product-item">
-                                    <div class="product-img">
-                                        <a href="single-product.html">
-                                            <img src="img/product/12.jpg" alt="">
-                                        </a>
-                                    </div>
-                                    <div class="product-info">
-                                        <h6 class="product-title">
-                                            <a href="single-product.html">Product Name</a>
-                                        </h6>
-                                        <h3 class="pro-price">$ 869.00</h3>
-                                    </div>
-                                </div>
-                                <!-- product-item end -->                               
-                            </aside>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -752,15 +412,15 @@
     <!-- Placed JS at the end of the document so the pages load faster -->
 
     <!-- jquery latest version -->
-    <script src="/javascripts/vendor/jquery-3.1.1.min.js"></script>
+    <script src="http://localhost:3000/javascripts/jquery-3.1.1.min.js"></script>
     <!-- Bootstrap framework js -->
-    <script src="/javascripts/bootstrap.min.js"></script>
+    <script src="http://localhost:3000/javascripts/bootstrap.min.js"></script>
     <!-- jquery.nivo.slider js -->
-    <script src="/javascripts/jquery.nivo.slider.js"></script>
+    <script src="http://localhost:3000/javascripts/jquery.nivo.slider.js"></script>
     <!-- All js plugins included in this file. -->
-    <script src="/javascripts/plugins.js"></script>
+    <script src="http://localhost:3000/javascripts/plugins.js"></script>
     <!-- Main js file that contents all jQuery plugins activation. -->
-    <script src="/javascripts/main.js"></script>
+    <script src="http://localhost:3000/javascripts/main.js"></script>
 
 </body>
 

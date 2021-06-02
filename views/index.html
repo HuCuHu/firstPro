@@ -416,13 +416,13 @@
                             <div class="col-xs-12">
                                 <div class="product-item product-item-2">
                                     <div class="product-img">
-                                        <a href="/single-product">
+                                        <a href="/single-product/single/<%= o.id %>">
                                             <img src="<%= o.p_url %>" alt="" style="height: 200px;width: 262.5px;">
                                         </a>
                                     </div>
                                     <div class="product-info">
                                         <h6 class="product-title">
-                                            <a href="/single-product"><%= o.name %></a>
+                                            <a href="/single-product/single/<%= o.id %>"><%= o.name %></a>
                                         </h6>
                                         <h6 class="brand-name"><%= o.type %></h6>
                                         <h3 class="pro-price">$ <%= o.price %></h3>
@@ -486,13 +486,13 @@
                                     <div class="col-md-3 col-sm-4 col-xs-12">
                                         <div class="product-item product-item-2">
                                             <div class="product-img">
-                                                <a href="/single-product">
+                                                <a href="/single-product/single/<%= o.id %>">
                                                     <img src="<%= o.p_url %>" alt="" style="height: 200px;width: 262.5px;">
                                                 </a>
                                             </div>
                                             <div class="product-info">
                                                 <h6 class="product-title">
-                                                    <a href="single-product.html"><%= o.name %></a>
+                                                    <a href="/single-product/single/<%= o.id %>"><%= o.name %></a>
                                                 </h6>
                                                 <h6 class="brand-name"><%= o.type %></h6>
                                                 <h3 class="pro-price">$ <%= o.price %></h3>
