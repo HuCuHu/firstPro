@@ -4,7 +4,7 @@ var connection = require('./mysql/mysql');
    
 //  if ($( "#find" ).click){
   router.get('/', function(req, res, next) {
-  var sql="SELECT * FROM `product`"
+  var sql="SELECT * FROM `product` order by id desc"
   connection.query(sql,function(err,result){
    console.log(result)
     if (err){

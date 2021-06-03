@@ -22,7 +22,7 @@
 
 // $("#tbody").delegate(".del","click",function(){
 // 	$.ajax({
-// 		type: "post",
+// 		type: "get",
 // 		url: "/goods/del",
 // 		dataType: "json",
 // 		data: {

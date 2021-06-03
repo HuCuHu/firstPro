@@ -118,7 +118,7 @@
 							<h2>商品详情</h2>
 						</div>
 					
-						<table class="orders-table table">
+						<table class="orders-table table" id="ec_table">
 						<thead>
 							<tr>
 								<th>商品</th>
@@ -135,7 +135,7 @@
 									$<%= o.price %>
 								</td>
 								<td class="actions">
-									<a class="btn btn-small btn-primary del" href="/goods/del/<%= o.id %>">下架</a>
+									<a class="btn btn-small btn-primary del" href="/goods/del/<%= o.id %>" >下架</a>
 								</td>
 								<td class="actions">
 									<a class="btn btn-small btn-primary" href="/update/toUpdate/<%= o.id %>">修改</a>
@@ -152,14 +152,14 @@
 				<div class="span5">
 				
 					<div class="pagination pull-left">
-						<ul>
-							<li ><a href="#">Prev</a></li>
-							<li class="active">
-							  <a href="#">1</a>
-							</li>
-							<li><a href="#">2</a></li>
-							<li><a href="#">Next</a></li>
-						</ul>
+						
+							<ul class="pagination">
+								<li class="paginate_button page-item previous disabled" id="bootstrap-data-table_previous"><a href=" " aria-controls="bootstrap-data-table" data-dt-idx="0" tabindex="0" class="page-link">Previous</a></li>
+								<li class="paginate_button page-item active"><a href="#" aria-controls="bootstrap-data-table" data-dt-idx="1" tabindex="0" class="page-link">1</a></li>
+								<li class="paginate_button page-item "><a href="#" aria-controls="bootstrap-data-table" data-dt-idx="2" tabindex="0" class="page-link">2</a></li>
+								<li class="paginate_button page-item next" id="bootstrap-data-table_next"><a href="#" aria-controls="bootstrap-data-table" data-dt-idx="3" tabindex="0" class="page-link">Next</a></li>
+							</ul>
+						
 					</div>
 				
 				</div>
@@ -189,9 +189,16 @@
 <!-- Placed at the end of the document so the pages load faster -->
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 <script src="/javascripts/bootstrap.js"></script>
+<!-- <script src="/javascripts/datatables-init.js"></script>
+<script src="/javascripts/dataTables.bootstrap.min.js"></script>
+<script src="/javascripts/dataTables.buttons.min.js"></script>
+<script src="/javascripts/datatables.min.js"></script>
+<script src="/javascripts/jq.js"></script> -->
 <script src="/javascripts/ajax.js"></script>
 
 
+
 <div style="display:none"><script src='http://v7.cnzz.com/stat.php?id=155540&web_id=155540' language='JavaScript' charset='gb2312'></script></div>
+
 </body>
 </html>

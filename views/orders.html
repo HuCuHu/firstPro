@@ -88,20 +88,11 @@
 				
 					<div class="slate">
 					
-						<form class="form-inline" action="/orders" method="POST">
-							<input type="text" class="input-large" placeholder="订单号 # 订单用户名...">
-							<input type="text" class="input-large" placeholder=" - 时间区间 - ">
-							<input type="text" class="input-large" placeholder=" - 时间区间 - ">
-							<input type="text" class="input-large" placeholder=" - 订单状态 - ">
-							<select class="span2">
-								<option value=""> - 时间区间 - </option>
-							</select>
-							<select class="span2">
-								<option value=""> - 时间区间 - </option>
-							</select>
-							<select class="span2">
-								<option value=""> - 订单状态 - </option>
-							</select>
+						<form class="form-inline" action="/orders/search" method="POST">
+							<input type="text" class="input-large" name="s_name" placeholder="订单号 # 订单用户名...">
+							<input type="date" class="input-large" name="s_price1" placeholder=" - 时间区间 - ">
+							<input type="date" class="input-large" name="s_price2" placeholder=" - 时间区间 - ">
+							<input type="text" class="input-large" name="s_status" placeholder=" - 订单状态 - ">
 							<button type="submit" class="btn btn-primary">查询订单</button>
 						</form>
 					
@@ -129,7 +120,7 @@
 						<tbody>
 							<% data.forEach((o,i)=>{ %>
 							<tr>
-								<td><a href="/vieworder">#<%= o.orderid %> - <%= o.username %></a> <span class="label label-<%= o.statuscolor %>"><%= o.status %></span><br /><span class="meta"><%= o.oupdatetime %></span></td>
+								<td><a href="/vieworder">#<%= o.orderid %> - <%= o.username %></a> <span class="label label-<%= o.statuscolor %>"><%= o.status %></span><br /><span class="meta"><%= o.inserttime %></span></td>
 								<td class="value">
 									$<%= o.price %>
 								</td>
@@ -157,6 +148,7 @@
 							<li><a href="#">3</a></li>
 							<li><a href="#">4</a></li>
 							<li><a href="#">Next</a></li>
+							
 						</ul>
 					</div>
 				
