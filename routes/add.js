@@ -18,8 +18,9 @@ router.post('/',(req,res)=>{
     var  introduce=req.body.introduce;
     var  color=req.body.color;
     var  inventory=req.body.inventory;
+    var  picture=req.body.picture;
 
-    connection.query('INSERT INTO product(name,price,type,introduce,color,inventory,updatetime,inserttime) VALUES(?,?,?,?,?,?,?,?) ',[name,price,type,introduce,color,inventory,time,time],function (err,result) {
+    connection.query('INSERT INTO product(name,price,type,introduce,color,inventory,updatetime,inserttime,p_url) VALUES(?,?,?,?,?,?,?,?,?) ',[name,price,type,introduce,color,inventory,time,time,picture],function (err,result) {
         if (err) {
           throw  err
         }else{

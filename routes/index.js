@@ -3,7 +3,7 @@ var router = express.Router();
 var connection = require('./mysql/mysql');
 
 /* GET home page. */
-var sql="SELECT * FROM `picture` INNER JOIN product on `picture`.pid = product.id"
+var sql="SELECT * FROM `product`"
 
 router.get('/', function(req, res, next) {
  connection.query(sql,function(err,result){
@@ -18,6 +18,7 @@ router.get('/', function(req, res, next) {
  })
  
 });
+
 
 
 

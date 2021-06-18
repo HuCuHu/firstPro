@@ -32,6 +32,30 @@ router.post('/',(req,res)=>{
   
   })
   })
+  router.get('/toUpdate2/:id', function (req, res) {
+    var id = req.params.id;
+    connection.query("select * from `order` where id=" + id, function (err, result) {
+        
+        if (err) {
+            throw err
+        } else {
+            res.render("orderUpdate", {data: result});       //直接跳转
+        }
+    });
+});
+router.post('/orderUpdate',(req,res)=>{
+    var id=req.body.id;
+    var  status=req.body.status;
+  
+    connection.query("update `order` set status='"+status+"' where id="+id+"",function (err,rs) {
+        if (err) {
+          throw  err
+        }else{
+            res.redirect('../orders');
+          }
+  
+  })
+  })
 
 
 

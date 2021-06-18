@@ -3,7 +3,7 @@ var router = express.Router();
 var connection = require('./mysql/mysql');
 
 /* GET home page. */
-var sql="SELECT * FROM `picture` INNER JOIN product on `picture`.pid = product.id"
+var sql="SELECT * FROM `product`"
 
 router.get('/', function(req, res, next) {
  connection.query(sql,function(err,result){
@@ -21,7 +21,7 @@ router.get('/', function(req, res, next) {
 router.post('/serach', function (req, res) {
   var key = req.body.s_key;
   
-  var sqls = "SELECT * FROM `picture` INNER JOIN product on `picture`.pid = product.id where name like ?";
+  var sqls = "SELECT * FROM `product` where name like ?";
 
   // if (key) {
   //     sqls += " and name like'%" + key + "%' ";

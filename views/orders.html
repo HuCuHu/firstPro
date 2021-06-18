@@ -10,9 +10,9 @@
     
     <!-- Le styles -->
     <link href="http://fonts.googleapis.com/css?family=Oxygen|Marck+Script" rel="stylesheet" type="text/css">
-    <link href="/stylesheets/bootstrap.css" rel="stylesheet">
-    <link href="/stylesheets/font-awesome.css" rel="stylesheet">
-    <link href="/stylesheets/admin.css" rel="stylesheet">
+    <link href="http://localhost:3000/stylesheets/bootstrap.css" rel="stylesheet">
+    <link href="http://localhost:3000/stylesheets/font-awesome.css" rel="stylesheet">
+    <link href="http://localhost:3000/stylesheets/admin.css" rel="stylesheet">
     
     <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -42,7 +42,7 @@
 						<ul id="store-dropdown" class="collapse">
 							<li><a href="/goods">商品管理</a></li>
 							<li><a href="/orders">订单详情</a></li>
-							<li><a href="/listing">订单查询</a></li>
+						
 						</ul>
 					</li>
 				</ul>
@@ -125,7 +125,7 @@
 									$<%= o.price %>
 								</td>
 								<td class="actions">
-									<a class="btn btn-small btn-primary" href="/update/toUpdate/<%= o.id %>">订单状态</a>
+									<a class="btn btn-small btn-primary" href="/update/toUpdate2/<%= o.id %>">订单状态</a>
 								</td>
 							</tr>
 							<% }) %>
@@ -178,7 +178,7 @@
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-<script src="/javascripts/bootstrap.js"></script>
+<script src="http://localhost:3000/javascripts/bootstrap.js"></script>
 
 
 <div style="display:none"><script src='http://v7.cnzz.com/stat.php?id=155540&web_id=155540' language='JavaScript' charset='gb2312'></script></div>

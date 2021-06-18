@@ -10,10 +10,12 @@
     
     <!-- Le styles -->
     <link href="http://fonts.googleapis.com/css?family=Oxygen|Marck+Script" rel="stylesheet" type="text/css">
-    <link href="/stylesheets/bootstrap.css" rel="stylesheet">
-    <link href="/stylesheets/font-awesome.css" rel="stylesheet">
-    <link href="/stylesheets/admin.css" rel="stylesheet">
-    
+    <link href="http://localhost:3000/stylesheets/bootstrap.css" rel="stylesheet">
+    <link href="http://localhost:3000/stylesheets/font-awesome.css" rel="stylesheet">
+    <link href="http://localhost:3000/stylesheets/admin.css" rel="stylesheet">
+	<!-- <link rel="stylesheet" href="http://localhost:3000/stylesheets/reset.css">
+    <link rel="stylesheet" href="http://localhost:3000/stylesheets/carts.css">
+     -->
     <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
 	    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -42,7 +44,7 @@
 						<ul id="store-dropdown" class="collapse">
                             <li><a href="/goods">商品管理</a></li>
 							<li><a href="/orders">订单详情</a></li>
-							<li><a href="/listing">订单查询</a></li>
+					
 						</ul>
 					</li>
 				</ul>
@@ -135,7 +137,7 @@
 									$<%= o.price %>
 								</td>
 								<td class="actions">
-									<a class="btn btn-small btn-primary del" href="/goods/del/<%= o.id %>" >下架</a>
+									<div class="del"><a class="btn btn-small btn-primary delBtn" href="/goods/del/<%= o.id %>" >下架</a></div>
 								</td>
 								<td class="actions">
 									<a class="btn btn-small btn-primary" href="/update/toUpdate/<%= o.id %>">修改</a>
@@ -183,18 +185,26 @@
 	</div> <!-- end row -->
 		
 </div> <!-- end container -->
+<!-- <section class="model_bg"></section>
+    <section class="my_model">
+        <p class="title">删除宝贝<span class="closeModel">X</span></p>
+        <p>您确认要删除该宝贝吗？</p>
+        <div class="opBtn"><a href="javascript:;" class="dialog-sure">确定</a><a href="javascript:;" class="dialog-close">关闭</a></div>
+    </section> -->
 
 <!-- Le javascript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-<script src="/javascripts/bootstrap.js"></script>
+<script src="http://localhost:3000/javascripts/bootstrap.js"></script>
 <!-- <script src="/javascripts/datatables-init.js"></script>
 <script src="/javascripts/dataTables.bootstrap.min.js"></script>
 <script src="/javascripts/dataTables.buttons.min.js"></script>
 <script src="/javascripts/datatables.min.js"></script>
 <script src="/javascripts/jq.js"></script> -->
-<script src="/javascripts/ajax.js"></script>
+<!-- <script src="/javascripts/ajax.js"></script>
+<script src="http://localhost:3000/javascripts/jquery.min.js"></script>
+    <script src="http://localhost:3000/javascripts/carts.js"></script> -->
 
 
 

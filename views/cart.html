@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>购物车</title>
+    <link rel="stylesheet" href="stylesheets/reset.css">
+    <link rel="stylesheet" href="stylesheets/carts.css">
+</head>
+<body>
+	
+	<h1 style="text-align: center;font-size: 50px;">我的购物车</h1>
+	<hr style="border: 2px solid black;">
+    <section class="cartMain">
+        <div class="cartMain_hd">
+            <ul class="order_lists cartTop">
+                <li class="list_chk">
+                    <!--所有商品全选-->
+                    <input type="checkbox" id="all" class="whole_check">
+                    <label for="all"></label>
+                    全选
+                </li>
+                <li class="list_info">商品图片</li>
+                <li class="list_info">商品信息</li>
+                <li class="list_price">单价</li>
+                <li class="list_amount">数量</li>
+                <li class="list_sum">金额</li>
+                <li class="list_op">操作</li>
+            </ul>
+        </div>
+
+        <div class="cartBox">
+            <div class="order_content">
+				<% data.forEach((o,i)=>{ %>
+					<input id="id" name="id" type="text" class="txtphone" value="<%= o.id %>" style="display: none;"/>
+                    <input name="price" type="text" class="txtphone" value="<%= o.price %>" style="display: none;"/>
+                <ul class="order_lists">
+                    <li class="list_chk">
+                        <input type="checkbox" id="checkbox_<%= o.id+1 %>" class="son_check">
+                        <label for="checkbox_<%= o.id+1 %>"></label>
+                    </li>
+                    <li class="list_con">
+                        <div class="list_img"><a href="javascript:;"><img src="images/product/<%= o.p_url %>" alt=""></a></div>
+                    </li>
+                    <li class="list_info">
+                        <div class="list_text"><a href="javascript:;"><%= o.name %> - <%= o.type %></a></div>
+                    </li>
+                    <li class="list_price">
+                        <p class="price">$ <%= o.price %></p>
+                    </li>
+                    <li class="list_amount" style=" margin-top: 25px;height: 90px;">
+                        <div class="amount_box">
+                            <a href="/cart/reduceamount/<%= o.id %>" class="reduce reSty" >-</a>
+                            <input type="text" value="<%= o.amount %>" name="amount" class="sum">
+                            <a href="/cart/addamount/<%= o.id %>" class="plus">+</a>
+                        </div>
+                    </li>
+                    <li class="list_sum">
+                        <p class="sum_price">$ <%= o.price*o.amount %></p>
+                    </li>
+                    <li class="list_op">
+                        <p class="del" style="margin-top: 48px;"><a href="/cart/del/<%= o.id %>" class="delBtn">移除商品</a></p>
+                    </li>
+                </ul>
+				<% }) %>
+            </div>
+        </div>
+		<a href="/index">不想买了?回到主页</a>
+        <!--底部-->
+        <div class="bar-wrapper">
+            <div class="bar-right">
+                <div class="piece">已选商品<strong class="piece_num">0</strong>件</div>
+                <div class="totalMoney">共计: <strong class="total_text">$0</strong></div>
+                <div class="calBtn"><a href="javascript:;">结算</a></div>
+            </div>
+        </div>
+    </section>
+    <section class="model_bg"></section>
+    <section class="my_model">
+        <p class="title">删除宝贝<span class="closeModel">X</span></p>
+        <p>您确认要删除该宝贝吗？</p>
+        <div class="opBtn"><a href="javascript:;" class="dialog-sure">确定</a><a href="javascript:;" class="dialog-close">关闭</a></div>
+    </section>
+	
+    <script src="javascripts/jquery.min.js"></script>
+    <script src="javascripts/carts.js"></script>
+	
+</body>
+</html>

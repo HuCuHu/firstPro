@@ -61,7 +61,7 @@
                                     <ul class="main-menu text-center">
                                         <li><a href="/index">主页</a></li>
                                         <li><a href="/shop">商城</a></li>
-                                        <li><a href="/single-product">商品详情</a></li>
+                                        
                                     </ul>
                                 </nav>
                             </div>
@@ -69,30 +69,13 @@
                             <div class="col-md-2 col-sm-6 col-xs-12">
                                 <div class="search-top-cart  f-right">
                                     <!-- header-search -->
-                                    <div class="header-search header-search-2 f-left">
-                                        <div class="header-search-inner">
-                                           <button class="search-toggle">
-                                            <i class="zmdi zmdi-search"></i>
-                                           </button>
-                                            <form action="#">
-                                                <div class="top-search-box">
-                                                    <input type="text" placeholder="Search here your product...">
-                                                    <button type="submit">
-                                                        <i class="zmdi zmdi-search"></i>
-                                                    </button>
-                                                </div>
-                                            </form> 
-                                        </div>
-                                    </div>
+                                    
                                     <div class="header-account header-account-2 f-left">
                                         <ul class="user-meta">
                                             <li><a href="#"><i class="zmdi zmdi-view-headline"></i></a>
                                                 <ul>
                                                     <li><a href="/login">我的账号</a></li>
-                                                    <li><a href="#">消费历史</a></li>
-                                                    <li><a href="#">支付</a></li>
-                                                    <li><a href="#">推荐</a></li>
-                                                    <li><a href="#">日志</a></li>        
+                                                           
                                                 </ul>
                                             </li>
                                         </ul>
@@ -101,100 +84,13 @@
                                     <div class="total-cart total-cart-2 f-left">
                                         <div class="total-cart-in">
                                             <div class="cart-toggler">
-                                                <a href="#">
-                                                    <span class="cart-quantity">02</span><br>
+                                                <a href="/cart">
+                                                    <span class="cart-quantity"></span><br>
                                                     <span class="cart-icon">
                                                         <i class="zmdi zmdi-shopping-cart-plus"></i>
                                                     </span>
                                                 </a>                            
                                             </div>
-                                            <ul>
-                                                <li>
-                                                    <div class="top-cart-inner your-cart">
-                                                        <h5 class="text-capitalize">购物车</h5>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="total-cart-pro">
-                                                        <!-- single-cart -->
-                                                        <div class="single-cart clearfix">
-                                                            <div class="cart-img f-left">
-                                                                <a href="#">
-                                                                    <img src="img/cart/1.jpg" alt="Cart Product" />
-                                                                </a>
-                                                                <div class="del-icon">
-                                                                    <a href="#">
-                                                                        <i class="zmdi zmdi-close"></i>
-                                                                    </a>
-                                                                </div>
-                                                            </div>
-                                                            <div class="cart-info f-left">
-                                                                <h6 class="text-capitalize">
-                                                                    <a href="#">产品名称</a>
-                                                                </h6>
-                                                                <p>
-                                                                    <span>品牌 <strong>:</strong></span>品牌名称
-                                                                </p>
-                                                                <p>
-                                                                    <span>模型 <strong>:</strong></span>Grand s2
-                                                                </p>
-                                                                <p>
-                                                                    <span>颜色 <strong>:</strong></span>黑白
-                                                                </p>
-                                                            </div>
-                                                        </div>
-                                                        <!-- single-cart -->
-                                                        <div class="single-cart clearfix">
-                                                            <div class="cart-img f-left">
-                                                                <a href="#">
-                                                                    <img src="img/cart/1.jpg" alt="Cart Product" />
-                                                                </a>
-                                                                <div class="del-icon">
-                                                                    <a href="#">
-                                                                        <i class="zmdi zmdi-close"></i>
-                                                                    </a>
-                                                                </div>
-                                                            </div>
-                                                            <div class="cart-info f-left">
-                                                                <h6 class="text-capitalize">
-                                                                    <a href="#">Dummy Product Name</a>
-                                                                </h6>
-                                                                <p>
-                                                                    <span>Brand <strong>:</strong></span>Brand Name
-                                                                </p>
-                                                                <p>
-                                                                    <span>Model <strong>:</strong></span>Grand s2
-                                                                </p>
-                                                                <p>
-                                                                    <span>Color <strong>:</strong></span>Black, White
-                                                                </p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="top-cart-inner subtotal">
-                                                        <h4 class="text-uppercase g-font-2">
-                                                            总价  =  
-                                                            <span>$ 500.00</span>
-                                                        </h4>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="top-cart-inner view-cart">
-                                                        <h4 class="text-uppercase">
-                                                            <a href="#">查看购物车</a>
-                                                        </h4>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="top-cart-inner check-out">
-                                                        <h4 class="text-uppercase">
-                                                            <a href="#">结算</a>
-                                                        </h4>
-                                                    </div>
-                                                </li>
-                                            </ul>
                                         </div>
                                     </div>
                                 </div>
@@ -261,7 +157,7 @@
                                     <div class="col-md-5 col-sm-5 col-xs-12">
                                         <input id="id" name="id" type="text" class="txtphone" value="<%= data[0].id %>" style="display: none;"/>
                                         <div class="imgs-zoom-area">
-                                            <img id="zoom_03" src="http://localhost:3000/<%= data[0].p_url %>" data-zoom-image="<%= data[0].p_url %>" alt="">
+                                            <img id="zoom_03" src="http://localhost:3000/images/product/<%= data[0].p_url %>" data-zoom-image="http://localhost:3000/images/product/<%= data[0].p_url %>" alt="">
                                             
                                         </div>
                                     </div>
@@ -299,12 +195,7 @@
                                             <hr>
                                             <!-- plus-minus-pro-action -->
                                             <div class="plus-minus-pro-action clearfix">
-                                                <div class="sin-plus-minus f-left clearfix">
-                                                    <p class="color-title f-left">Qty</p>
-                                                    <div class="cart-plus-minus f-left">
-                                                        <input type="text" value="02" name="qtybutton" class="cart-plus-minus-box">
-                                                    </div>   
-                                                </div>
+                                    
                                                 <div class="sin-pro-action f-right">
                                                     <ul class="action-button">
                                                         <li>
@@ -317,7 +208,7 @@
                                                             <a href="#" title="Compare" tabindex="0"><i class="zmdi zmdi-refresh"></i></a>
                                                         </li>
                                                         <li>
-                                                            <a href="#" title="Add to cart" tabindex="0"><i class="zmdi zmdi-shopping-cart-plus"></i></a>
+                                                            <a href="/cart/cart/<%= data[0].id %>" title="Add to cart" tabindex="0"><i class="zmdi zmdi-shopping-cart-plus"></i></a>
                                                         </li>
                                                     </ul>
                                                 </div>
@@ -359,7 +250,7 @@
                                             <div class="product-item">
                                                 <div class="product-img">
                                                     <a href="/single-product">
-                                                        <img src="http://localhost:3000/<%= o.p_url %>" alt="">
+                                                        <img src="http://localhost:3000/images/product/<%= o.p_url %>" alt="">
                                                     </a>
                                                 </div>
                                                 <div class="product-info">
@@ -385,7 +276,7 @@
                                                             <a href="#" title="Compare"><i class="zmdi zmdi-refresh"></i></a>
                                                         </li>
                                                         <li>
-                                                            <a href="#" title="Add to cart"><i class="zmdi zmdi-shopping-cart-plus"></i></a>
+                                                            <a href="/cart/cart/<%= data[0].id %>" title="Add to cart"><i class="zmdi zmdi-shopping-cart-plus"></i></a>
                                                         </li>
                                                     </ul>
                                                 </div>

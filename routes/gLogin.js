@@ -4,7 +4,7 @@ var connection = require('./mysql/mysql');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('login');
+  res.render('gLogin');
 });
 
 //注册
@@ -18,7 +18,7 @@ router.post('/',(req,res) =>{
   var  name=req.body.name;
     var pass=req.body.pass;
 
-    var selectSQL = "select * from user where username = '"+name+"' and password = '"+pass+"'";
+    var selectSQL = "select * from supplier where suppliername = '"+name+"' and password = '"+pass+"'";
   
   connection.query(selectSQL, function (error, results, fields) {
     if (error){
@@ -26,10 +26,10 @@ router.post('/',(req,res) =>{
     } 
     var user=results[0];
     if (user){
-      req.session.user=user;
-      res.redirect('/index');
+      req.session.boss=user;
+      res.redirect('/back');
     }else{
-      res.render("login",{message:'用户名或密码错误'});
+      res.render("gLogin",{message:'用户名或密码错误'});
     }
     
   });

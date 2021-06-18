@@ -27,7 +27,9 @@
                   <span style="letter-spacing:8px;">用户名:</span>
                   <input id="username" name="username" type="text" class="txtphone" placeholder="请输入用户名" />
                   <br>
-                  <span></span>
+                  <small id="nousername" class="form-text text-muted float-right">
+                    <span style="color: #bd2130;">您输入的用户名不符合规范！</span>
+                </small>
               </div>
               <div class="txt txt0" >
                   <span style="letter-spacing:4px;">登录密码:</span>
@@ -39,7 +41,9 @@
                   <span style="letter-spacing:4px;">重复密码:</span>
                   <input id="password2" name="repass" type="password" class="txtphone" placeholder="请再次输入密码"/>
                   <br>
-                  <span></span>
+                  <small id="nopwd" class="form-text text-muted float-right">
+                    <span style="color: #bd2130;">您输入的密码不符合规范！</span>
+                </small>
               </div>
               <div class="txt txt0" >
                 <span style="letter-spacing:16px;">姓名:</span>
@@ -72,5 +76,30 @@
       <script type="text/javascript" src="/javascripts/jquery.min.js"></script>
       <script src="/javascripts/zhuce.js"></script>
       <script src="/javascripts/jq.js"></script>
+      <script>
+          $(function(){
+        $("#nousername").hide();
+        $("#nopwd").hide();
+    })
+    function register(){
+        let username,pwd;
+        username=$("#username").val();
+        pwd=$("#pwd").val();
+
+        if(/^\w{4,10}$/.test(username)){
+        }else{
+            $("nousername").css("display","block");
+            $("#nousername").show();
+
+        }
+        if(/^\w{4,10}$/.test(pwd)){
+        }else{
+            $("#nopwd").show();
+            $("#block").css("margin-top","25px");
+            return;
+        }
+    }
+    $("#btn")[0].addEventListener("click",register,true);
+      </script>
 </body>
 </html>
